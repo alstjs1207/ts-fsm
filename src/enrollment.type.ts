@@ -1,2 +1,2 @@
-export type EnrollmentStates = "pending" | "enrollment" | "applying" | "canceling";
-export type EnrollmentEvents = "proposal" | "approved" | "rejected" | "canceled" | "cancelComplete";
+export type EnrollmentState = "pending" | "enrollment" | "applying";
+export type EnrollmentEvent = "proposal" | "approved" | "rejected" | "canceled";
