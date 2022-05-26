@@ -1,4 +1,4 @@
-import { Enrollment } from "../enrollment";
+import { Enrollment } from "./enrollment";
 
 describe("수강신청 stateMachine tests", () => {
 
@@ -29,7 +29,6 @@ describe("수강신청 stateMachine tests", () => {
     expect(enrollment.isEnrollment()).toBeFalsy();
     // 대기 일 때만 수강신청 가능
     expect(enrollment.validateEnrollmentState("proposal")).toBeTruthy();
-    console.log(enrollment.getState());
 
     enrollment.proposal();
     console.log(enrollment.getState());
@@ -76,6 +75,17 @@ describe("수강신청 stateMachine tests", () => {
     const enrollment = new Enrollment("enrollment");
     expect(enrollment.isEnrollment()).toBeTruthy();
     expect(() => enrollment.proposal()).toThrow();
+  });
+
+  test("수강신청 - 자동 승인", () => {
+    const enrollment = new Enrollment();
+    expect(enrollment.validateEnrollmentState("proposal")).toBeTruthy();
+    enrollment.proposal();
+    expect(enrollment.isApply()).toBeTruthy();
+
+    enrollment.approved();
+    expect(enrollment.isEnrollment()).toBeTruthy();
+
   });
 
 });
