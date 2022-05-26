@@ -27,10 +27,8 @@
   "homepage": "https://github.com/eram/ts-fsm#readme",
   "scripts": {
     "build": "npm run lint && tsc --pretty",
-    "lint2": "eslint --color src/**/*.ts && jest --coverage --silent",
-    "test": "jest ./build/*.spec.js --detectOpenHandles",
-    "clean": "rimraf ./build ./coverage",
-    "clean:all": "rimraf ./build ./coverage ./node_modules",
+    "test": "eslint --color src/**/*.ts && jest --coverage --silent",
+    "clean": "rimraf coverage *.log logs build coverage",
     "lint": "eslint --color --fix src/**/*.ts && echo Lint complete.",
     "jest": "jest --watch"
   },
@@ -45,8 +43,9 @@
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-no-null": "^1.0.2",
     "eslint-plugin-sonarjs": "^0.5.0",
+    "jest": "^27.4.4",
     "rimraf": "^3.0.2",
-    "jest": "^28.1.0",
+    "ts-jest": "^27.1.1",
     "typescript": "^3.9.10"
   }
 }

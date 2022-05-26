@@ -1,4 +1,4 @@
-import { Enrollment } from "./enrollment";
+import { Enrollment } from "../enrollment";
 
 describe("수강신청 stateMachine tests", () => {
 
